@@ -1,3 +1,17 @@
+#waifu2x-caffe (for Windows)
+----------
+
+ Creator: lltcggie
+
+This software only converts the conversion function of the image conversion software "[waifu2x](https://github.com/nagadomi/waifu2x)
+It was rewritten using [Caffe](http://caffe.berkeleyvision.org/) and built for Windows.
+Although it can convert with CPU, using CUDA (or cuDNN) can convert faster than CPU.
+
+GUI supports English, Japanese, Simplified Chinese, Traditional Chinese, Korean, Turkish, and French.
+
+You can download the software in the "Downloads" section of the [here releases page](https://github.com/lltcggie/waifu2x-caffe/releases).
+
+
 ## On this page
 
 1. [I / O setting](#i-o-setting)
@@ -53,19 +67,6 @@
 1. [--crop_w](#crop_w)
 1. [--crop_h](#crop_h)
 1. [See also](#see-also)
-
-#waifu2x-caffe (for Windows)
-----------
-
- Creator: lltcggie
-
-This software only converts the conversion function of the image conversion software "[waifu2x](https://github.com/nagadomi/waifu2x)
-It was rewritten using [Caffe](http://caffe.berkeleyvision.org/) and built for Windows.
-Although it can convert with CPU, using CUDA (or cuDNN) can convert faster than CPU.
-
-GUI supports English, Japanese, Simplified Chinese, Traditional Chinese, Korean, Turkish, and French.
-
-You can download the software in the "Downloads" section of the [here releases page](https://github.com/lltcggie/waifu2x-caffe/releases).
 
 
 ##Required environment
