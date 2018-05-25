@@ -1,7 +1,7 @@
-#waifu2x-caffe (for Windows)
+# waifu2x-caffe (for Windows)
 ----------
 
- Creator: lltcggie
+Creator: lltcggie
 
 This software only converts the conversion function of the image conversion software "[waifu2x](https://github.com/nagadomi/waifu2x)
 It was rewritten using [Caffe](http://caffe.berkeleyvision.org/) and built for Windows.
@@ -69,7 +69,7 @@ You can download the software in the "Downloads" section of the [here releases p
 1. [See also](#see-also)
 
 
-##Required environment
+## Required environment
 ----------
 
 In order to operate this software, at least the following environment is necessary.
@@ -89,7 +89,7 @@ When converting with cuDNN, further
 If you want to know the Compute Capability of your GPU, please check [this page](https://developer.nvidia.com/cuda-gpus).
 
 
-##About cuDNN
+## About cuDNN
 --------
 
 cuDNN is a library for high-speed machine learning which can be used only with NVIDIA GPU.
@@ -154,7 +154,7 @@ CUDA UpRGB model
 | 500		 | Unmeasurable		  | Unmeasurable (6144 or more) |
 
 
-##Usage (GUI version)
+## Usage (GUI version)
 --------
 
 "Waifu2x - caffe.exe" is GUI software. Double click to start.
@@ -306,7 +306,7 @@ The expected remaining time is displayed in the log, but this is an estimate whe
 So it is not useful when the size of the file falls apart, and only "unknown" is displayed when the number of processed images is 2 or less.
 
 
-##How to use (CUI version)
+## How to use (CUI version)
 --------
 
 "Waifu2x - caffe - cui.exe" is a command line tool.
@@ -327,7 +327,7 @@ When you do the above, the conversion result is saved in `mywaifu (noise_scale) 
 For details of the command list and each command, please read the command line option (common) and command line option (CUI version).
 
 
-##Command line option (common)
+## Command line option (common)
 --------
 
 With this software, the following options can be specified.
@@ -410,7 +410,7 @@ Ignores all options after this option is specified.
 It is for script batch file.
 
 
-##Command line option (GUI version)
+## Command line option (GUI version)
 --------
 
 In the GUI version, arguments that do not fit option specifications are recognized as input files.
@@ -441,7 +441,7 @@ It corresponds to the setting item "model" in the GUI as follows.
 * anime_style_art_y: 2-dimensional illustration (Y model)
 
 
-##Command line option (CUI version)
+## Command line option (CUI version)
 --------
 
 ## <a id="version" href="#version">--version</a>
@@ -485,7 +485,7 @@ Specify the division size (vertical width). If not set, the value of crop_size i
 Specifying the divisor of the vertical width of the input image may make it possible to convert it faster.
 
 
-##Split size
+## Split size
 --------
 
 When waifu 2x-caffe (waifu 2 x is also) converts the image,
@@ -502,7 +502,7 @@ In addition, please refer to it because it has the following characteristics.
  * If you doubled the number, in theory the amount of memory used will be quadrupled (actually 3 to 4 times etc) so be careful not to drop the software. Especially since CUDA consumes more memory than cuDNN, be careful
 
 
-##About images with alpha channel
+## About images with alpha channel
 --------
 
 With this software, expansion of images with alpha channel is also supported.
@@ -510,7 +510,7 @@ However, since it is processing to enlarge the alpha channel alone, please note 
 However, when the alpha channel is composed of a single color, it can be enlarged in about the same time as when there is no alpha channel.
 
 
-##The format of language files
+## The format of language files
 --------
 
 Language files format is JSON.
@@ -528,7 +528,7 @@ ex.
   * English (UK) LangID: 0x09 (LANG_ENGLISH), SubLangID: 0x02 (SUBLANG_ENGLISH_UK)
 
 
-##Disclaimer
+## Disclaimer
 --------------
 
 This software is not guaranteed.
@@ -536,7 +536,7 @@ Please use it under the judgment of the user.
 The creator shall not bear any obligation.
 
 
-##Acknowledgments
+## Acknowledgments
 ------
 [Ultraist](https://twitter.com/ultraistter) who produced the original [waifu2x](https://github.com/nagadomi/waifu2x) and model and released it under the MIT license Mr.,
 [Amigo](https://twitter.com/WL_Amigo) created [waifu2x-converter](https://github.com/WL-Amigo/waifu2x-converter-cpp) based on the original waifu2x Mr. (I was quite referring to how to write README and LICENSE.txt, how to use OpenCV, etc.)
@@ -547,7 +547,7 @@ Also, @ paul70078 who translated the message into English, @ yonhakcher who tran
 Thanks to JYUNYA for providing GUI version icon.
 
 
-##Change log
+## Change log
 --------------
  * ver 1.1.8.4
 - compatible with cuDNN v7
