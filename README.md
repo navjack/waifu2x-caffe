@@ -11,7 +11,6 @@ GUI supports English, Japanese, Simplified Chinese, Traditional Chinese, Korean,
 
 You can download the software in the "Downloads" section of the [here releases page](https://github.com/lltcggie/waifu2x-caffe/releases).
 
-
 ## On this page
 
 1. [I / O setting](#i-o-setting)
@@ -74,20 +73,19 @@ You can download the software in the "Downloads" section of the [here releases p
 
 In order to operate this software, at least the following environment is necessary.
 
- * OS: Windows Vista and later 64bit (There is no exe for 32bit)
- * Memory: Free memory 1 GB or more (depending on the image size to be converted)
- * GPU: NVIDIA GPU with Compute Capability 2.0 or higher (not required when converting with CPU)
- * Visual C ++ 2013 redistributable package installed (required)
-- The above package is [here](https://www.microsoft.com/en-US/download/details.aspx?id=40784)
-- After pressing the `download` button, select `vcredist_x64.exe` and download and install it.
-- If you can not find it, try searching "Visual C ++ 2013 redistributable package".
+- OS: Windows Vista and later 64bit (There is no exe for 32bit)
+- Memory: Free memory 1 GB or more (depending on the image size to be converted)
+- GPU: NVIDIA GPU with Compute Capability 2.0 or higher (not required when converting with CPU)
+- Visual C ++ 2013 redistributable package installed (required)
+	- The above package is [here](https://www.microsoft.com/en-US/download/details.aspx?id=40784)
+	- After pressing the `download` button, select `vcredist_x64.exe` and download and install it.
+	- If you can not find it, try searching "Visual C ++ 2013 redistributable package".
 
 When converting with cuDNN, further
 
- * GPU: NVIDIA GPU with Compute Capability 3.0 or higher
+- GPU: NVIDIA GPU with Compute Capability 3.0 or higher
 
 If you want to know the Compute Capability of your GPU, please check [this page](https://developer.nvidia.com/cuda-gpus).
-
 
 ## About cuDNN
 --------
@@ -95,8 +93,8 @@ If you want to know the Compute Capability of your GPU, please check [this page]
 cuDNN is a library for high-speed machine learning which can be used only with NVIDIA GPU.
 Although you can convert with CUDA without using cuDNN, using cuDNN has the following advantages.
 
- * Depending on the type of GPU used, you can convert images faster
- * You can reduce the usage of VRAM (at least at less than half of CUDA, the difference opens as the division size increases)
+- Depending on the type of GPU used, you can convert images faster
+- You can reduce the usage of VRAM (at least at less than half of CUDA, the difference opens as the division size increases)
 
 CuDNN has such advantages, but because of license it can not distribute necessary files for operation.
 So people who want to use cuDNN download binary for Windows (v 5.1 RC or later) on [this page](https://developer.nvidia.com/cuDNN)
@@ -107,11 +105,11 @@ If you insert dll while software is running, please restart the software.
 
 Measurement results of processing speed and VRAM usage in the author's environment are as follows.
 
- * GPU: GTX 980 Ti
- * VRAM: 6 GB
- * Processing content: PNG 4ch image with 1000 * 1000 noise removal and enlargement, JPEG noise removal level 1, magnification factor 2.00, TTA mode unused
- * Processing time measurement method: Measured average processing time of 10 times in CUI version. However, processing is done twice in advance at first (in order not to include the time required for initialization)
- * Calculation method of VRAM usage: (Maximum VRAM used during processing in GUI version) - (VRAM usage after starting GUI version)
+- GPU: GTX 980 Ti
+- VRAM: 6 GB
+- Processing content: PNG 4ch image with 1000 * 1000 noise removal and enlargement, JPEG noise removal level 1, magnification factor 2.00, TTA mode unused
+- Processing time measurement method: Measured average processing time of 10 times in CUI version. However, processing is done twice in advance at first (in order not to include the time required for initialization)
+- Calculation method of VRAM usage: (Maximum VRAM used during processing in GUI version) - (VRAM usage after starting GUI version)
 
 cuDNN RGB model
 
@@ -153,7 +151,6 @@ CUDA UpRGB model
 | 250		 | 00:00:02.852 	  | 2345						|
 | 500		 | Unmeasurable		  | Unmeasurable (6144 or more) |
 
-
 ## Usage (GUI version)
 --------
 
@@ -167,7 +164,6 @@ After launch, if you drag and drop images or folders into the "Input Path" colum
 If you want to change the output destination, please change the "output path" field.
 
 You can change the conversion setting according to your preference.
-
 
 ## <a id="i-o-setting" href="#i-o-setting">I / O setting</a>
 This is a set of setting items related to file input / output.
@@ -200,9 +196,9 @@ Specify the image quality of the converted image.
 Values ​​that can be set are integers.
 The range and meaning of possible values ​​depend on the format set in "Output extension".
 
-* .jpg: Range of values ​​(0 to 100) The higher the number, the higher the image quality
-* .webp: Range of values ​​(1 to 100) If the number is high and the image quality is 100, lossless compression
-* .tga: Value range (0 to 1) 0 indicates no compression, 1 indicates RLE compression
+- .jpg: Range of values ​​(0 to 100) The higher the number, the higher the image quality
+- .webp: Range of values ​​(1 to 100) If the number is high and the image quality is 100, lossless compression
+- .tga: Value range (0 to 1) 0 indicates no compression, 1 indicates RLE compression
 
 ## <a id="number-of-output-depth-bi" href="#number-of-output-depth-bi">"Number of output depth bits"</a>
 Specify the number of bits per channel of the converted image.
@@ -213,31 +209,33 @@ Processing method of file conversion, Setting items related to image quality.
 
 ## <a id="conversion-mode" href="#conversion-mode">"Conversion mode"</a>
 Specify the conversion mode.
-* Noise elimination and expansion: Noise elimination and expansion
-* Expansion: We will expand
-* Noise removal: Noise removal
-* Noise elimination (automatic discrimination) and enlargement: Perform enlargement. It also performs noise removal only when the input is a JPEG image
+
+- Noise elimination and expansion: Noise elimination and expansion
+- Expansion: We will expand
+- Noise removal: Noise removal
+- Noise elimination (automatic discrimination) and enlargement: Perform enlargement. It also performs noise removal only when the input is a JPEG image
 
 ## <a id="jpeg-noise-removal-level" href="#jpeg-noise-removal-level">"JPEG noise removal level"</a>
 Specify the noise removal level. The higher level removes the noise more strongly, but there is also the possibility of becoming a slick picture.
 ## <a id="enlarged-size" href="#enlarged-size">"Enlarged size"</a>
 Set the size after enlargement.
-* Specified by enlargement ratio: Enlarges the image at the specified enlargement ratio
-* Specified by the width after conversion: While enlarging the aspect ratio of the image, enlarge it so that it becomes the specified width (unit is pixel)
-* Specified by the vertical width after conversion: While maintaining the aspect ratio of the image, enlarge it so that it becomes the designated vertical width (unit is pixel)
-* Specified by width and width after conversion: Enlarges so that it becomes the specified vertical and horizontal width. Specify it like "1920 x 1080" (unit is pixel)
 
+- Specified by enlargement ratio: Enlarges the image at the specified enlargement ratio
+- Specified by the width after conversion: While enlarging the aspect ratio of the image, enlarge it so that it becomes the specified width (unit is pixel)
+- Specified by the vertical width after conversion: While maintaining the aspect ratio of the image, enlarge it so that it becomes the designated vertical width (unit is pixel)
+- Specified by width and width after conversion: Enlarges so that it becomes the specified vertical and horizontal width. Specify it like "1920 x 1080" (unit is pixel)
 
 In the case of magnification ratios exceeding 2 times (in the case of removing noise, only the first one is performed), the enlargement ratio is doubled until exceeding the designated enlargement ratio, and in the case of the enlargement ratio not being a power of 2, We will do the process. Therefore, there is a possibility that the result of conversion will be a solid picture.
 
 ## <a id="model" href="#model">"model"</a>
 Specify the model to use.
 Since the optimum model differs depending on the image to be converted, we recommend trying various models.
-* 2-dimensional illustration (RGB model): 2-dimensional illustration model for converting all RGB of image
-* Photo · Anime (Photo model): Model for photography · animation
-* 2 dimensional illustration (UpRGB model): A model that transforms at higher speed and equal or higher image quality than 2D illustration (RGB model). However, since the amount of memory (VRAM) consumed by the RGB model is large, adjust the partition size when forcibly terminating during conversion
-* Photo · Animation (UpPhoto model): A model that converts with higher image quality than the photo / animation (Photo model) at high speed. However, since the amount of memory (VRAM) consumed by the Photo model is large, adjust the partition size when forcibly terminating during conversion
-* 2-dimensional illustration (Y model): 2-dimensional illustration model that converts only the luminance of the image
+
+- 2-dimensional illustration (RGB model): 2-dimensional illustration model for converting all RGB of image
+- Photo · Anime (Photo model): Model for photography · animation
+- 2 dimensional illustration (UpRGB model): A model that transforms at higher speed and equal or higher image quality than 2D illustration (RGB model). However, since the amount of memory (VRAM) consumed by the RGB model is large, adjust the partition size when forcibly terminating during conversion
+- Photo · Animation (UpPhoto model): A model that converts with higher image quality than the photo / animation (Photo model) at high speed. However, since the amount of memory (VRAM) consumed by the Photo model is large, adjust the partition size when forcibly terminating during conversion
+- 2-dimensional illustration (Y model): 2-dimensional illustration model that converts only the luminance of the image
 
 ## <a id="using-tta-mode" href="#using-tta-mode">"Using TTA Mode"</a>
 Specify whether to use TTA (Test-Time Augmentation) mode or not.
@@ -260,22 +258,25 @@ It is a group of settings that summarizes the behavior settings that seems to ha
 ## <a id="automatic-conversion-star" href="#automatic-conversion-star">"Automatic conversion start setting at file input setting"</a>
 It sets whether to automatically start converting when specifying an input file with reference button or drag and drop.
 In the case where the input file is given as an argument to exe, the setting contents of this item will not be affected.
-* Do not start automatically: Even if you enter a file, conversion will not start automatically
-* Start with inputting even one file: Start converting automatically when you input even one file
-* Start when you input a folder or multiple files: Start folder: When multiple files are input, conversion starts automatically. Please convert a single image file only when adjusting conversion settings
+
+- Do not start automatically: Even if you enter a file, conversion will not start automatically
+- Start with inputting even one file: Start converting automatically when you input even one file
+- Start when you input a folder or multiple files: Start folder: When multiple files are input, conversion starts automatically. Please convert a single image file only when adjusting conversion settings
 
 ## <a id="processor-used" href="#processor-used">"Processor Used"</a>
 Specify the processor that performs the conversion.
-* CUDA (cuDNN if used): Convert using CUDA (GPU) (cuDNN is used if cuDNN is available)
-* CPU: Convert using CPU only
+
+- CUDA (cuDNN if used): Convert using CUDA (GPU) (cuDNN is used if cuDNN is available)
+- CPU: Convert using CPU only
 
 ## <a id="do-not-overwrite-output-f" href="#do-not-overwrite-output-f">"Do not overwrite output file"</a>
 If this setting is ON, if there is a file with the same name in the image writing destination, no conversion will be done.
 
 ## <a id="startup-setting-with-argu" href="#startup-setting-with-argu">"Startup setting with argument"</a>
 Sets the behavior when input file is given as argument to exe.
-* Convert at startup: Conversion starts automatically at startup
-* End on success: Automatically terminate unless conversion failed at the end of conversion
+
+- Convert at startup: Conversion starts automatically at startup
+- End on success: Automatically terminate unless conversion failed at the end of conversion
 
 ## <a id="gpu-no-used" href="#gpu-no-used">"GPU No. used"</a>
 You can specify the device number to use when there are multiple GPUs. Ignored when in CPU mode or when an invalid device number is specified.
@@ -305,7 +306,6 @@ The progress bar shows the degree of progress when changing multiple images.
 The expected remaining time is displayed in the log, but this is an estimate when processing multiple files of the same vertical width and horizontal width.
 So it is not useful when the size of the file falls apart, and only "unknown" is displayed when the number of processed images is 2 or less.
 
-
 ## How to use (CUI version)
 --------
 
@@ -326,7 +326,6 @@ When you do the above, the conversion result is saved in `mywaifu (noise_scale) 
 
 For details of the command list and each command, please read the command line option (common) and command line option (CUI version).
 
-
 ## Command line option (common)
 --------
 
@@ -346,10 +345,11 @@ The default value is `png`.
 
 ## <a id="m-mode" href="#m-mode">- m , --mode</a>
 Specify the conversion mode. If not specified, `noise_scale` is selected.
-* noise: Performs noise removal (to be exact, image conversion is performed using a noise removal model)
-* scale: Enlarges (exactly, after enlarging with the existing algorithm, image conversion is performed using the model for complementing enlarged image)
-* noise_scale: Performs noise elimination and enlargement (enlargement processing is continued after removing noise)
-* auto_scale: Enlarges. It also performs noise removal only when the input is a JPEG image
+
+- noise: Performs noise removal (to be exact, image conversion is performed using a noise removal model)
+- scale: Enlarges (exactly, after enlarging with the existing algorithm, image conversion is performed using the model for complementing enlarged image)
+- noise_scale: Performs noise elimination and enlargement (enlargement processing is continued after removing noise)
+- auto_scale: Enlarges. It also performs noise removal only when the input is a JPEG image
 
 ## <a id="s-scale_ratio" href="#s-scale_ratio">-s , --scale_ratio</a>
 Specify how many times the image is enlarged. The default value is `2.0`, but you can specify anything other than 2.0 times.
@@ -373,10 +373,10 @@ The default value is `0`.
 
 ## <a id="p-process" href="#p-process">- p , - process</a>
 Specify the processor to use for processing. The default value is `gpu`.
-* cpu: Convert using CPU.
-* gpu: Convert using CUDA (GPU). For Windows version only use cuDNN if you can use cuDNN.
-* cudnn: Convert using cuDNN.
 
+- cpu: Convert using CPU.
+- gpu: Convert using CUDA (GPU). For Windows version only use cuDNN if you can use cuDNN.
+- cudnn: Convert using cuDNN.
 
 ## <a id="c-crop_size" href="#c-crop_size">- c , --crop_size</a>
 Specify the division size. The default value is `128`.
@@ -409,7 +409,6 @@ If `1` is specified, TTA mode is used. The default value is `0`.
 Ignores all options after this option is specified.
 It is for script batch file.
 
-
 ## Command line option (GUI version)
 --------
 
@@ -434,12 +433,12 @@ If `1` is specified, if there is a file with the same name in the image writing 
 upconv_7_photo | anime_style_art_ rgb | photo | anime_style_art_y>
 Specify the model to use.
 It corresponds to the setting item "model" in the GUI as follows.
-* upconv_7_anime_style_art_ rgb: 2D illustration (UpRGB model)
-* upconv_7_photo: Photography · Anime (UpPhoto model)
-* anime_style_art_rgb: 2D illustration (RGB model)
-* photo: Photo · Anime (Photo model)
-* anime_style_art_y: 2-dimensional illustration (Y model)
 
+- upconv_7_anime_style_art_ rgb: 2D illustration (UpRGB model)
+- upconv_7_photo: Photography · Anime (UpPhoto model)
+- anime_style_art_rgb: 2D illustration (RGB model)
+- photo: Photo · Anime (Photo model)
+- anime_style_art_y: 2-dimensional illustration (Y model)
 
 ## Command line option (CUI version)
 --------
@@ -468,12 +467,14 @@ Basically, the saved location is the same directory as the input image.
 ## <a id="model_dir" href="#model_dir">--model_dir</a>
 Specify the path to the directory where the model is stored. The default value is `models / upconv_7_anime_style_art_rgb`.
 The following models are included with the standard.
-* `models / anime_style_art_rgb`: 2-dimensional image model for converting all RGB
-* `models / anime_style_art`: model for two-dimensional image that converts only luminance
-* `models / photo`: Photos that convert all RGB, models for animated images
-* `models / upconv_7_anime_style_art_rgb`: Anime_style_art_rgb A model to convert at higher speed and equal or higher image quality
-* `models / upconv_7_photo`: A model that converts with higher image quality than the photo at higher speed
-* `models / ukbench`: old-fashioned model for photography (only models that are enlarged are attached, noise can not be removed)
+
+- `models / anime_style_art_rgb`: 2-dimensional image model for converting all RGB
+- `models / anime_style_art`: model for two-dimensional image that converts only luminance
+- `models / photo`: Photos that convert all RGB, models for animated images
+- `models / upconv_7_anime_style_art_rgb`: Anime_style_art_rgb A model to convert at higher speed and equal or higher image quality
+- `models / upconv_7_photo`: A model that converts with higher image quality than the photo at higher speed
+- `models / ukbench`: old-fashioned model for photography (only models that are enlarged are attached, noise can not be removed)
+
 Basically it does not have to be specified. Please specify it when using a model other than the default or your own model.
 
 ## <a id="crop_w" href="#crop_w">--crop_w</a>
@@ -483,7 +484,6 @@ Specifying the divisor of the width of the input image may make it possible to c
 ## <a id="crop_h" href="#crop_h">--crop_h</a>
 Specify the division size (vertical width). If not set, the value of crop_size is used.
 Specifying the divisor of the vertical width of the input image may make it possible to convert it faster.
-
 
 ## Split size
 --------
@@ -497,10 +497,9 @@ Increasing this number may cause processing to be completed quickly. (Because it
 Please adjust while watching GPU Load (GPU usage) and Memory Used (VRAM usage) at [GPU - Z](http://www.techpowerup.com/gpuz/).
 In addition, please refer to it because it has the following characteristics.
 
- * The higher the number is, the more it will not become faster
- * If the division size is a divisor of the vertical and horizontal sizes of the image (or a small number when it is divided), the amount of computation wastefully decreases and becomes faster. (There seems to be the case that the numerical value that does not fit much with this condition becomes the fastest?
- * If you doubled the number, in theory the amount of memory used will be quadrupled (actually 3 to 4 times etc) so be careful not to drop the software. Especially since CUDA consumes more memory than cuDNN, be careful
-
+- The higher the number is, the more it will not become faster
+- If the division size is a divisor of the vertical and horizontal sizes of the image (or a small number when it is divided), the amount of computation wastefully decreases and becomes faster. (There seems to be the case that the numerical value that does not fit much with this condition becomes the fastest?
+- If you doubled the number, in theory the amount of memory used will be quadrupled (actually 3 to 4 times etc) so be careful not to drop the software. Especially since CUDA consumes more memory than cuDNN, be careful
 
 ## About images with alpha channel
 --------
@@ -509,7 +508,6 @@ With this software, expansion of images with alpha channel is also supported.
 However, since it is processing to enlarge the alpha channel alone, please note that it takes about twice as long as the image without alpha channel does not expand.
 However, when the alpha channel is composed of a single color, it can be enlarged in about the same time as when there is no alpha channel.
 
-
 ## The format of language files
 --------
 
@@ -517,16 +515,16 @@ Language files format is JSON.
 If you create new language file, add language setting to 'lang / LangList.txt'.
 'lang / LangList.txt' format is TSV (Tab-Separated Values).
 
-  * LangName: Language name
-  * LangID: Primary language [See MSDN](https://msdn.microsoft.com/en-us/library/windows/desktop/dd318693.aspx)
-  * SubLangID: Sublanguage [See MSDN](https://msdn.microsoft.com/en-us/library/windows/desktop/dd318693.aspx)
-  * FileName: Language file name
+- LangName: Language name
+- LangID: Primary language [See MSDN](https://msdn.microsoft.com/en-us/library/windows/desktop/dd318693.aspx)
+- SubLangID: Sublanguage [See MSDN](https://msdn.microsoft.com/en-us/library/windows/desktop/dd318693.aspx)
+- FileName: Language file name
+
 ex.
 
-  * Japanese Lang ID: 0x11 (LANG_JAPANESE), SubLangID: 0x01 (SUBLANG_JAPANESE_JAPAN)
-  * English (US) LangID: 0x09 (LANG_ENGLISH), SubLangID: 0x01 (SUBLANG_ENGLISH_US)
-  * English (UK) LangID: 0x09 (LANG_ENGLISH), SubLangID: 0x02 (SUBLANG_ENGLISH_UK)
-
+- Japanese Lang ID: 0x11 (LANG_JAPANESE), SubLangID: 0x01 (SUBLANG_JAPANESE_JAPAN)
+- English (US) LangID: 0x09 (LANG_ENGLISH), SubLangID: 0x01 (SUBLANG_ENGLISH_US)
+- English (UK) LangID: 0x09 (LANG_ENGLISH), SubLangID: 0x02 (SUBLANG_ENGLISH_UK)
 
 ## Disclaimer
 --------------
@@ -534,7 +532,6 @@ ex.
 This software is not guaranteed.
 Please use it under the judgment of the user.
 The creator shall not bear any obligation.
-
 
 ## Acknowledgments
 ------
@@ -546,173 +543,199 @@ Also, @ paul70078 who translated the message into English, @ yonhakcher who tran
 @ Lizardon1995, @ yoonhakcher who translated the message into Chinese (traditional), @ Scharynche who gave a pull request for Turkish translation, @ Serted who gave a pull request for French translation,
 Thanks to JYUNYA for providing GUI version icon.
 
-
 ## Change log
 --------------
- * ver 1.1.8.4
-- compatible with cuDNN v7
- * ver 1.1.8.3
-- Fixed that the enlargement of vertical width or horizontal width specification may cause deviation of about 1px from specified size due to calculation error
-- Correct that output of CUI may be garbled in non-Japanese environment
-- compatible with cuDNN v6
- * ver 1.1.8.2
-- Fixed a bug that sometimes caused errors when selecting output folder
-- Fixed a bug recognized as horizontal width specification even if vertical width size is specified in GUI
-- The output depth bit number can not be changed by input
- * ver 1.1.8.1
-- Added size specification by width and width after conversion in GUI
-- CUI allows you to simultaneously specify width and width after conversion
-- French added to translate GUI
- * ver 1.1.8
-- Updated CUDA Toolkit to 8.0.44 (dll included is also updated)
-- cu DNN v 5.1 compatible
-- If the alpha channel is monochromatic, speed up by expanding with cv :: INTER_NEAREST
- * ver 1.1.7.1
-- Add icon to GUI version
-- Fixed a bug that output was wrong when using TTA mode when crop_w and crop_h are different values
- * ver 1.1.7
-- Update upconv model
-- Change the model used by the standard to upconv_7_anime_style_art_rgb
-- The upconv model is displayed on the GUI version
-- Fixed a bug that the output file name does not change even when changing the noise removal level to 0 in the GUI version
- * ver 1.1.6.1
-- Fixed a bug that denoising level 0 could not be specified with command line option
-- Fixed a bug that output file name suffix does not change when noise removal level 0 radio button is pressed in GUI version
-- Fixed bug that Chinese (simplified) translation was not displayed correctly
- * ver 1.1.6
-- Add noise removal level 0
-- Change the default value of noise removal level from 1 to 0
-- Fixed a bug where vertical width specification enlargement behavior was the same as horizontal width specification
-- Fixed that the use amount of VRAM exceeding the maximum value was forcibly terminated in algorithm search using cuDNN
-- Fixed a bug that forcibly terminates when selecting a large number of files in GUI input input reference dialog
-- Fixed a bug that command line option crop size specification was not working in GUI version
-- Correct that strange images appear when converting 32 bit Bitmap
- * ver 1.1.5
-- Added upconv model (photo)
-- Photo Noise Reduction Model Update
-- compatible with cuDNN v5.1 RC
-- Faster processing speed when using cuDNN
-(we made cu DNN usage algorithm fastest and cached the result)
-- Added crop_w, crop_h option in CUI version
-- Update contents of "About cuDNN" of README according to the current situation
-- Messages are issued on forced termination in the GUI version
-(Although only message that split size may be the cause is issued, but in fact it may be another cause to note)
-- Fixed a bug that forcibly terminates if batch_size is 2 or more
-- Fixed a bug that forcibly terminates if the used processor is CPU
-- Fixed cuBLAS and cuRAND initialization failure message issued in an environment where CUDA is not available
- * ver 1.1.4
-- correspond to upconv model (illustration)
-- Noise removal model update
-- Enabled to specify the GPU device used for conversion
-- The rule of automatic generation of output file name of CUI version is aligned with GUI version
-- Memory shortage countermeasure became ineffective due to the relationship which rewrote considerably contents
-(In environments where 16 GB of memory is loaded, it may become to forcibly terminate if the image of 1500 x 1500 magnified is enlarged more than 8 times.
-Conversely speaking, there is no effect unless it is expanded to a considerable size)
- * ver 1.1.3.2
-- Fixed a bug that input path might not be recognized when launching by passing command line option in GUI
-- Update Caffe (corresponds to cuDNN v5 RC)
- * ver 1.1.3.1
-- Corresponds to command line options with GUI
-- Separate option settings in separate windows with GUI
-- Added behavior setting when file is specified as argument in GUI
-- Add output file overwrite prohibition setting by GUI
-- Added initial directory setting when pressing reference button in GUI
-- Add reference button to output in GUI
-- Improved so that you can select files and folders at the same time in the window when input reference button is pressed in GUI
-- Fixed a bug that forced termination occurred with 16 bit output
-- Added check on whether GUI is Compute Capability 2.0 or higher device
-- Reduced memory usage
-- If the size of the enlarged image exceeds 3 GB, data is written to a temporary file so as to take measures against memory shortage
- * ver 1.1.3
-- Implement noise rejection level 3
-- Update model of anime_style_art (Y direction)
-- Added ability to change the size of the dialog displayed by GUI reference button
-- Add translation for Traditional Chinese
-- Add translation for Turkish
- * ver 1.1.2.1
-- Fixed a bug that CUI did not start (change the shortcut option for help display to "-?")
- * ver 1.1.2
-- Enlarged size can be specified by vertical width or horizontal width after conversion
-- The remaining time is displayed in GUI when processing multiple files
-- Fixed GUI freezing for a long time when inputting a folder containing a large number of images in the GUI
-- Improve image quality for magnification ratios of sizes other than factorial size of 2 (Reduction algorithm changed from Linear to Lanczos 4)
-- Supports input of multiple files and folders
-- When passing image files and folders as command line arguments to GUI exe, conversion was done at the setting at the last start
- * ver 1.1.1.3
-- Add translation for Korean
-- Fixed that the progress bar was not functioning in the GUI
- * ver 1.1.1.2
-- Add translation for Simplified Chinese
-- Fixed a bug that sometimes the output result of partial image format may be incorrect
-- Enabled to set whether to use RLE compression when outputting tga
- * ver 1.1.1.1
-- Fixed bug that alpha channel disappeared due to noise removal
-- Fixed a bug that was not enlarged by "noise removal (automatic discrimination) and enlargement" (auto_scale)
- * ver 1.1.1
-- Fixed that noise appears at magnification ratio more than twice depending on the model to be used
- * ver 1.1.0
-- Updated enlarged model of 2D illustration (RGB model)
-- Supported English with GUI (If you write even language file you should be able to support other languages ​​too)
-- Change GUI design
-- Update Caffe
-- Update cuDNN that uses Caffe with updating to v4 RC
-- Added button to set input path in GUI
-- Fixed an issue where drag & drop of files is accepted even if GUI is activated with administrator's privilege
-- Update OpenCV to v3.1.0
-- Corresponds to input and output of WebP with OpenCV update
-- Output image quality can be set with output format corresponding to lossy compression
-- It is possible to set the number of depth bits of the output image
-- Supports input of 16 bit, 32 bit depth image depth
-* ver 1.0.8.1
-- Restore conversion settings at last exit when starting with GUI
-- Fixed forced termination when trying to convert using GPU depending on Compute Capability
-- Logs are generated only on error (generated as "error_log_ ~" in the current directory)
- * ver 1.0.8
-- Update Caffe
-- CuDNN to use with Caffe update also updated to v3
-- Updated CUDA Toolkit to 7.5.18 (Updated bundled dll)
-- Updated photographic model (you can expand not only noise removal)
-- Adjust processing of the alpha channel to that of the original one
-(It turned out that blurring near the boundary cured when converting an image with an alpha channel, it took approximately twice as long to expand the image with an alpha channel)
-- The image is rounded off when returning from the floating-point type to the integer type (adjusted to the original family)
- * ver 1.0.7
-- Update model to waifu2x v0.11
-- Implementation of TTA (Test-Time Augmentation) mode
-- Input_extension_list compare file extension regardless of uppercase and lowercase
- * ver 1.0.6.1
-- Add tga to input_extension_list
- * ver 1.0.6
-- Make tga format readable and writable
-- Fixed jaggy appearing in antialiasing when converting image with alpha channel
- * ver 1.0.5
-- Added RGB version model and photo model
-- Updated CUDA Toolkit to 7.0.28 (dll included is also updated)
-- Even if you specify how many split sizes, the result will be the same
-- Speed ​​up initialization
- * ver 1.0.4
-- Updated Caffe (Added setting for Compute Capability 5.2)
-- I checked version of CUDA driver
-- Fixed a bug where the default split size might be very large in the GUI
- * ver 1.0.3
-- Update Caffe
-- Updated CUDA Toolkit to 6.5.19 (Updated dll is also included)
-- Slightly speed up memory transfer from GPU to CPU
-- crop_size (division size), batch_size (CUI version only) can be specified
-- Prevent vu cuDNN before v2 (because there are many bugs)
-- The reason is displayed when the GUI cuDNN check fails
-- Corrected that "- j" option which does not exist in waifu 2 x - caffe - cui.exe execution example of README.txt was attached.
-- Various additions of README.txt
-- Because it is misleading, I changed a part of the expression GPU to CUDA
- * ver 1.0.2
-- Fixed a bug that caused strange output when converting images with alpha channel
-- Fixed a bug that output file name does not change even if noise removal level is changed with GUI
-- Fixed a bug where cuDNN could not be used if gpu was specified as the conversion processor
-- Fixed that the format of the automatic GUI setting output name is different from CUI
-- I tried to display the processing time and the processor I used in the GUI
- * ver 1.0.1
-- Fixed bug that CUI did not work
- * ver 1.0.0
-- Release
+
+- ver 1.1.8.4
+	- compatible with cuDNN v7
+
+- ver 1.1.8.3
+	- Fixed that the enlargement of vertical width or horizontal width specification may cause deviation of about 1px from specified size due to calculation error
+	- Correct that output of CUI may be garbled in non-Japanese environment
+	- compatible with cuDNN v6
+
+- ver 1.1.8.2
+	- Fixed a bug that sometimes caused errors when selecting output folder
+	- Fixed a bug recognized as horizontal width specification even if vertical width size is specified in GUI
+	- The output depth bit number can not be changed by input
+
+- ver 1.1.8.1
+	- Added size specification by width and width after conversion in GUI
+	- CUI allows you to simultaneously specify width and width after conversion
+	- French added to translate GUI
+
+- ver 1.1.8
+	- Updated CUDA Toolkit to 8.0.44 (dll included is also updated)
+	- cu DNN v 5.1 compatible
+	- If the alpha channel is monochromatic, speed up by expanding with cv :: INTER_NEAREST
+
+- ver 1.1.7.1
+	- Add icon to GUI version
+	- Fixed a bug that output was wrong when using TTA mode when crop_w and crop_h are different values
+
+- ver 1.1.7
+	- Update upconv model
+	- Change the model used by the standard to upconv_7_anime_style_art_rgb
+	- The upconv model is displayed on the GUI version
+	- Fixed a bug that the output file name does not change even when changing the noise removal level to 0 in the GUI version
+
+- ver 1.1.6.1
+	- Fixed a bug that denoising level 0 could not be specified with command line option
+	- Fixed a bug that output file name suffix does not change when noise removal level 0 radio button is pressed in GUI version
+	- Fixed bug that Chinese (simplified) translation was not displayed correctly
+
+- ver 1.1.6
+	- Add noise removal level 0
+	- Change the default value of noise removal level from 1 to 0
+	- Fixed a bug where vertical width specification enlargement behavior was the same as horizontal width specification
+	- Fixed that the use amount of VRAM exceeding the maximum value was forcibly terminated in algorithm search using cuDNN
+	- Fixed a bug that forcibly terminates when selecting a large number of files in GUI input input reference dialog
+	- Fixed a bug that command line option crop size specification was not working in GUI version
+	- Correct that strange images appear when converting 32 bit Bitmap
+
+- ver 1.1.5
+	- Added upconv model (photo)
+	- Photo Noise Reduction Model Update
+	- compatible with cuDNN v5.1 RC
+	- Faster processing speed when using cuDNN (we made cu DNN usage algorithm fastest and cached the result)
+	- Added crop_w, crop_h option in CUI version
+	- Update contents of "About cuDNN" of README according to the current situation
+	- Messages are issued on forced termination in the GUI version (Although only message that split size may be the cause is issued, but in fact it may be another cause to note)
+	- Fixed a bug that forcibly terminates if batch_size is 2 or more
+	- Fixed a bug that forcibly terminates if the used processor is CPU
+	- Fixed cuBLAS and cuRAND initialization failure message issued in an environment where CUDA is not available
+
+- ver 1.1.4
+	- correspond to upconv model (illustration)
+	- Noise removal model update
+	- Enabled to specify the GPU device used for conversion
+	- The rule of automatic generation of output file name of CUI version is aligned with GUI version
+	- Memory shortage countermeasure became ineffective due to the relationship which rewrote considerably contents (In environments where 16 GB of memory is loaded, it may become to forcibly terminate if the image of 1500 x 1500 magnified is enlarged more than 8 times. Conversely speaking, there is no effect unless it is expanded to a considerable size)
+
+- ver 1.1.3.2
+	- Fixed a bug that input path might not be recognized when launching by passing command line option in GUI
+	- Update Caffe (corresponds to cuDNN v5 RC)
+
+- ver 1.1.3.1
+	- Corresponds to command line options with GUI
+	- Separate option settings in separate windows with GUI
+	- Added behavior setting when file is specified as argument in GUI
+	- Add output file overwrite prohibition setting by GUI
+	- Added initial directory setting when pressing reference button in GUI
+	- Add reference button to output in GUI
+	- Improved so that you can select files and folders at the same time in the window when input reference button is pressed in GUI
+	- Fixed a bug that forced termination occurred with 16 bit output
+	- Added check on whether GUI is Compute Capability 2.0 or higher device
+	- Reduced memory usage
+	- If the size of the enlarged image exceeds 3 GB, data is written to a temporary file so as to take measures against memory shortage
+
+- ver 1.1.3
+	- Implement noise rejection level 3
+	- Update model of anime_style_art (Y direction)
+	- Added ability to change the size of the dialog displayed by GUI reference button
+	- Add translation for Traditional Chinese
+	- Add translation for Turkish
+
+- ver 1.1.2.1
+	- Fixed a bug that CUI did not start (change the shortcut option for help display to "-?")
+
+- ver 1.1.2
+	- Enlarged size can be specified by vertical width or horizontal width after conversion
+	- The remaining time is displayed in GUI when processing multiple files
+	- Fixed GUI freezing for a long time when inputting a folder containing a large number of images in the GUI
+	- Improve image quality for magnification ratios of sizes other than factorial size of 2 (Reduction algorithm changed from Linear to Lanczos 4)
+	- Supports input of multiple files and folders
+	- When passing image files and folders as command line arguments to GUI exe, conversion was done at the setting at the last start
+
+- ver 1.1.1.3
+	- Add translation for Korean
+	- Fixed that the progress bar was not functioning in the GUI
+
+- ver 1.1.1.2
+	- Add translation for Simplified Chinese
+	- Fixed a bug that sometimes the output result of partial image format may be incorrect
+	- Enabled to set whether to use RLE compression when outputting tga
+
+- ver 1.1.1.1
+	- Fixed bug that alpha channel disappeared due to noise removal
+	- Fixed a bug that was not enlarged by "noise removal (automatic discrimination) and enlargement" (auto_scale)
+
+- ver 1.1.1
+	- Fixed that noise appears at magnification ratio more than twice depending on the model to be used
+
+- ver 1.1.0
+	- Updated enlarged model of 2D illustration (RGB model)
+	- Supported English with GUI (If you write even language file you should be able to support other languages too)
+	- Change GUI design
+	- Update Caffe
+	- Update cuDNN that uses Caffe with updating to v4 RC
+	- Added button to set input path in GUI
+	- Fixed an issue where drag & drop of files is accepted even if GUI is activated with administrator's privilege
+	- Update OpenCV to v3.1.0
+	- Corresponds to input and output of WebP with OpenCV update
+	- Output image quality can be set with output format corresponding to lossy compression
+	- It is possible to set the number of depth bits of the output image
+	- Supports input of 16 bit, 32 bit depth image depth
+
+- ver 1.0.8.1
+	- Restore conversion settings at last exit when starting with GUI
+	- Fixed forced termination when trying to convert using GPU depending on Compute Capability
+	- Logs are generated only on error (generated as "error_log_ ~" in the current directory)
+
+- ver 1.0.8
+	- Update Caffe
+	- CuDNN to use with Caffe update also updated to v3
+	- Updated CUDA Toolkit to 7.5.18 (Updated bundled dll)
+	- Updated photographic model (you can expand not only noise removal)
+	- Adjust processing of the alpha channel to that of the original one (It turned out that blurring near the boundary cured when converting an image with an alpha channel, it took approximately twice as long to expand the image with an alpha channel)
+	- The image is rounded off when returning from the floating-point type to the integer type (adjusted to the original family)
+
+- ver 1.0.7
+	- Update model to waifu2x v0.11
+	- Implementation of TTA (Test-Time Augmentation) mode
+	- Input_extension_list compare file extension regardless of uppercase and lowercase
+
+- ver 1.0.6.1
+	- Add tga to input_extension_list
+
+- ver 1.0.6
+	- Make tga format readable and writable
+	- Fixed jaggy appearing in antialiasing when converting image with alpha channel
+
+- ver 1.0.5
+	- Added RGB version model and photo model
+	- Updated CUDA Toolkit to 7.0.28 (dll included is also updated)
+	- Even if you specify how many split sizes, the result will be the same
+	- Speed up initialization
+
+- ver 1.0.4
+	- Updated Caffe (Added setting for Compute Capability 5.2)
+	- I checked version of CUDA driver
+	- Fixed a bug where the default split size might be very large in the GUI
+
+- ver 1.0.3
+	- Update Caffe
+	- Updated CUDA Toolkit to 6.5.19 (Updated dll is also included)
+	- Slightly speed up memory transfer from GPU to CPU
+	- crop_size (division size), batch_size (CUI version only) can be specified
+	- Prevent vu cuDNN before v2 (because there are many bugs)
+	- The reason is displayed when the GUI cuDNN check fails
+	- Corrected that "- j" option which does not exist in waifu 2 x - caffe - cui.exe execution example of README.txt was attached.
+	- Various additions of README.txt
+	- Because it is misleading, I changed a part of the expression GPU to CUDA
+
+- ver 1.0.2
+	- Fixed a bug that caused strange output when converting images with alpha channel
+	- Fixed a bug that output file name does not change even if noise removal level is changed with GUI
+	- Fixed a bug where cuDNN could not be used if gpu was specified as the conversion processor
+	- Fixed that the format of the automatic GUI setting output name is different from CUI
+	- I tried to display the processing time and the processor I used in the GUI
+
+- ver 1.0.1
+	- Fixed bug that CUI did not work
+
+- ver 1.0.0
+	- Release
 
 ## <a id="see-also" href="#see-also">See also</a>
 
