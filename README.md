@@ -113,42 +113,42 @@ Measurement results of processing speed and VRAM usage in the author's environme
 
 cuDNN RGB model
 
-| Split size |	Processing time   |   VRAM usage (MB)			|
+| Split size |	Processing time	  |	  VRAM usage (MB)			|
 |:-----------|:-------------------|:----------------------------|
-| 100		 | 00:00:03.170 	  | 278				 			|
-| 125		 | 00:00:02.745 	  | 279				 			|
-| 200		 | 00:00:02.253 	  | 365				 			|
-| 250		 | 00:00:02.147 	  | 446				 			|
-| 500		 | 00:00:01.982 	  | 1110						|
+| 100		 | 00:00:03.170		  | 278							|
+| 125		 | 00:00:02.745		  | 279							|
+| 200		 | 00:00:02.253		  | 365							|
+| 250		 | 00:00:02.147		  | 446							|
+| 500		 | 00:00:01.982		  | 1110						|
 
 CUDA RGB model
 
-| Split size |	Processing time   |   VRAM usage (MB)			|
+| Split size |	Processing time	  |	  VRAM usage (MB)			|
 |:-----------|:-------------------|:----------------------------|
-| 100		 | 00:00:06.192 	  | 724							|
-| 125		 | 00:00:05.504 	  | 724							|
-| 200		 | 00:00:04.642 	  | 1556						|
-| 250		 | 00:00:04.436 	  | 2345						|
+| 100		 | 00:00:06.192		  | 724							|
+| 125		 | 00:00:05.504		  | 724							|
+| 200		 | 00:00:04.642		  | 1556						|
+| 250		 | 00:00:04.436		  | 2345						|
 | 500		 | Unmeasurable		  | Unmeasurable (6144 or more) |
 
 cuDNN UpRGB model
 
-| Split size |	Processing time   |   VRAM usage (MB)			|
+| Split size |	Processing time	  |	  VRAM usage (MB)			|
 |:-----------|:-------------------|:----------------------------|
-| 100		 | 00:00:02.831 	  | 328							|
-| 125		 | 00:00:02.573 	  | 329							|
-| 200		 | 00:00:02.261 	  | 461							|
-| 250		 | 00:00:02.150 	  | 578							|
-| 500		 | 00:00:01.991 	  | 1554						|
+| 100		 | 00:00:02.831		  | 328							|
+| 125		 | 00:00:02.573		  | 329							|
+| 200		 | 00:00:02.261		  | 461							|
+| 250		 | 00:00:02.150		  | 578							|
+| 500		 | 00:00:01.991		  | 1554						|
 
 CUDA UpRGB model
 
-| Split size |	Processing time   |   VRAM usage (MB)			|
+| Split size |	Processing time	  |	  VRAM usage (MB)			|
 |:-----------|:-------------------|:----------------------------|
-| 100		 | 00:00:03.669 	  | 788							|
-| 125		 | 00:00:03.382 	  | 787							|
-| 200		 | 00:00:02.965 	  | 1596						|
-| 250		 | 00:00:02.852 	  | 2345						|
+| 100		 | 00:00:03.669		  | 788							|
+| 125		 | 00:00:03.382		  | 787							|
+| 200		 | 00:00:02.965		  | 1596						|
+| 250		 | 00:00:02.852		  | 2345						|
 | 500		 | Unmeasurable		  | Unmeasurable (6144 or more) |
 
 ## Usage (GUI version)
@@ -745,9 +745,9 @@ External resources
 * [Releases · lltcggie/waifu2x-caffe · GitHub - github.com](https://github.com/lltcggie/waifu2x-caffe/releases)
 * [Download Visual C++ Redistributable Packages for Visual Studio 2013 from Official Microsoft Download Center - www.microsoft.com](https://www.microsoft.com/en-US/download/details.aspx?id=40784)
 * [CUDA GPUs  - developer.nvidia.com](https://developer.nvidia.com/cuda-gpus)
-* [NVIDIA cuDNN  - developer.nvidia.com](https://developer.nvidia.com/cuDNN)
+* [NVIDIA cuDNN	 - developer.nvidia.com](https://developer.nvidia.com/cuDNN)
 * [GPU-Z Video card GPU Information Utility - www.techpowerup.com](http://www.techpowerup.com/gpuz/)
 * [Language Identifier Constants and Strings (Windows) - msdn.microsoft.com](https://msdn.microsoft.com/en-us/library/windows/desktop/dd318693.aspx)
 * [id:ultraist (@ultraistter)  - twitter.com](https://twitter.com/ultraistter)
-* [アミーゴ (@WL_Amigo)  - twitter.com](https://twitter.com/WL_Amigo)
+* [アミーゴ (@WL_Amigo)	 - twitter.com](https://twitter.com/WL_Amigo)
 * [GitHub - WL-Amigo/waifu2x-converter-cpp: waifu2x(original : https://github.com/nagadomi/waifu2x) re-implementation in C++ using OpenCV [NO LONGER UPDATED] - github.com](https://github.com/WL-Amigo/waifu2x-converter-cpp)
